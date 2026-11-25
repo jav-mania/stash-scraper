@@ -25,7 +25,7 @@ and cover images.
 | H4610 / C0930 / H0930 | `h4610-ki261027.mp4` |
 | Pikkur | `pikkur 04727.mp4` |
 | AV9898 | `av9898 2948.mp4` |
-| Censored releases | `JUSD-813.mp4`, `sqte00425.mp4` |
+| Censored releases | `JUSD-813.mp4`, `sqte00425.mp4`, `022JKSR-505.mp4` |
 
 Separators can be `-`, `_`, space or `.`; extra text such as `[site]`, `-1080p`, `-FHD`, `-C` or `hhb` is ignored.
 
@@ -61,13 +61,20 @@ redirects to other sites) and gives up after 60 seconds. A miss returns nothing 
 
 ## Performers
 
-- **Scrape by URL**: paste a `jav-mania.net/actress/…` URL.
-- **Scrape with… → JAV Mania** on a performer, or search by her English name (e.g. `Yui Hatano`).
+- **Scrape by URL**: a JAV Mania `jav-mania.net/actress/…` page or an AV品番 `avhinban.com/performers/…` page.
+- **Search by name** in English (`Yui Hatano`, matched on JAV Mania) or Japanese (`大槻ひびき`, matched on AV品番).
+- **Scrape with… → JAV Mania** on a performer uses her JAV Mania / AV品番 URL, then her name.
 
-Fields: English name, Japanese name (alias), gender, career years and the JAV Mania page. Height, measurements
-(e.g. `88E-59-85`) and birthday are added when she has uncensored titles on JAV Mania, which is where that
-profile is published. Scraped scenes carry the same profile on each performer, so a new performer created from
-a scene is filled in too.
+Fields: name, the other-language name as alias (English ⇄ Japanese) plus other spellings, gender, career start and
+end years, height, measurements (e.g. `88E-59-85`), birthday, and both site URLs. Profiles cover about 6,000
+performers. Scraped scenes carry the profile and page URL on each performer, so performers created from a scene are
+filled in too.
+
+## Scene fields
+
+Title, code, description, release date, duration, studio (for censored releases the label, with its maker as the
+parent studio), series (group), director, tags, performers, cover image and URLs: the JAV Mania and AV品番 pages
+plus the plain FANZA, MGS, DUGA and Sokmil store pages.
 
 ## License
 
