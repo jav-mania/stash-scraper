@@ -27,23 +27,37 @@ and cover images.
 | AV9898 | `av9898 2948.mp4` |
 | Censored releases | `JUSD-813.mp4`, `sqte00425.mp4` |
 
-Bare ids without a studio name are tried as Caribbeancom (`MMDDYY-NNN`), then 1Pondo, Caribbeancom
-Premium and PacoPacoMama (`MMDDYY_NNN`), then 10Musume (`MMDDYY_NN`).
+Separators can be `-`, `_`, space or `.`; extra text such as `[site]`, `-1080p`, `-FHD`, `-C` or `hhb` is ignored.
+
+Bare ids without a studio name: `MMDDYY-NNN` is Caribbeancom and `MMDDYY_NN` is 10Musume. `MMDDYY_NNN` is used by
+1Pondo, Caribbeancom Premium and PacoPacoMama, and the same id often exists on more than one of them, so a bare
+`MMDDYY_NNN` is only filled in automatically when exactly one studio has it. Otherwise add the studio name to the
+file name, or use scene search to pick from the matches.
+
+Not covered: FC2-PPV and other amateur platforms.
 
 ## Install
 
 1. Copy `scrapers/JAVMania/` into your Stash `scrapers` folder
    (for example `~/.stash/scrapers/JAVMania/`).
 2. In Stash: **Settings → Metadata Providers → Scrapers → Reload scrapers**.
-3. Python 3 must be on the `PATH` of the Stash server. No extra packages are needed.
+3. The Stash server needs Python 3.8+ (no extra packages). Stash looks for `python`/`python3` on its own `PATH`;
+   if it can't find it (common for Windows services and some Docker images), set **Settings → System →
+   Python executable path**.
 
 ## Use
 
 - **Scrape by URL**: paste a `jav-mania.net/movies/…`, `jav-mania.net/jav/…` or `avhinban.com/works/…` URL.
-- **Scrape with… → JAV Mania** on a scene: uses the scene's title (or file name when the title is empty) or code.
-- **Scene search** in the scrape dialog: type a code such as `paco 101416_183` or `JUSD-813`.
+- **Scrape with… → JAV Mania** on a scene: uses the scene's URL, code, title, then its file name.
+- **Scene search** in the scrape dialog: type a code such as `paco 101416_183` or `JUSD-813`, or a performer
+  name or title words in Japanese (e.g. `吉岡ひより`) to pick from up to 20 matches.
 
-Requests go only to jav-mania.net and avhinban.com, one or two per scene.
+Censored releases: AV品番 covers about 600,000 FANZA and MGS titles and records where each one is also sold.
+For titles found on JAV Mania it fills in what the English page lacks (series, director, studio, release date).
+The scene also gets the plain store pages on FANZA, MGS, DUGA and Sokmil (no affiliate or tracking parameters).
+
+The scraper only contacts jav-mania.net and avhinban.com (usually 1 to 4 requests per scene, never following
+redirects to other sites) and gives up after 60 seconds. A miss returns nothing rather than a guess.
 
 ## License
 
