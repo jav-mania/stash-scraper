@@ -59,6 +59,16 @@ The scene also gets the plain store pages on FANZA, MGS, DUGA and Sokmil (no aff
 The scraper only contacts jav-mania.net and avhinban.com (usually 1 to 4 requests per scene, never following
 redirects to other sites) and gives up after 60 seconds. A miss returns nothing rather than a guess.
 
+## Performers
+
+- **Scrape by URL**: paste a `jav-mania.net/actress/…` URL.
+- **Scrape with… → JAV Mania** on a performer, or search by her English name (e.g. `Yui Hatano`).
+
+Fields: English name, Japanese name (alias), gender, career years and the JAV Mania page. Height, measurements
+(e.g. `88E-59-85`) and birthday are added when she has uncensored titles on JAV Mania, which is where that
+profile is published. Scraped scenes carry the same profile on each performer, so a new performer created from
+a scene is filled in too.
+
 ## License
 
 MIT
