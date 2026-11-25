@@ -72,13 +72,13 @@ SITES = {
     "muramura": (["muramura"], D6 + SEP + r"(\d{3,4})", lambda m: f"{m[0]}_{m[1]}"),
     "heyzo": (["heyzo"], r"(?:hd" + SEP + r"?)?(\d{4})", lambda m: m[0]),
     "kin8": (["kin8tengoku", "kin8"], r"(\d{4})", lambda m: m[0]),
-    "nyoshin": (["nyoshin"], r"(n\d{3,5})", lambda m: m[0]),
+    "nyoshin": (["nyoshin"], r"((?:n|les)\d{3,4})", lambda m: m[0]),
     "hgmo": (["heydouga", "hgmo"], r"(\d{4})", lambda m: m[0]),
-    "h4610": (["h4610"], r"([a-z]{2,6}\d{5,6})", lambda m: m[0]),
-    "c0930": (["c0930"], r"([a-z]{2,6}\d{5,6})", lambda m: m[0]),
-    "h0930": (["h0930"], r"([a-z]{2,6}\d{5,6})", lambda m: m[0]),
+    "h4610": (["h4610"], r"([a-z]{2,3}\d{3,6})", lambda m: m[0]),
+    "c0930": (["c0930"], r"([a-z]{2,8}\d{4,6})", lambda m: m[0]),
+    "h0930": (["h0930"], r"([a-z]{2,3}\d{3,6})", lambda m: m[0]),
     "pikkur": (["pikkur"], r"(\d{5})", lambda m: m[0]),
-    "av9898": (["av9898"], r"(\d{4})", lambda m: m[0]),
+    "av9898": (["av9898"], r"(\d{2,4})", lambda m: m[0]),
 }
 # Longest alias first, so "carib-pr" wins over "carib".
 ALIASES = sorted(
